@@ -10,7 +10,10 @@ from src.input import *
 from src.distributions import f_today, f_FD
 import src.utils as utils
 from src.units import UNITS
-
+# import os
+# os.environ["XLA_PYTHON_CLIENT_PREALLOCATE"]="false"
+# os.environ["XLA_PYTHON_CLIENT_MEM_FRACTION"]=".XX"
+# os.environ["XLA_PYTHON_CLIENT_ALLOCATOR"]="platform"
 
 @jit
 def my_function(u_ini, theta, phi, r_ini, Mh):

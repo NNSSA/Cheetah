@@ -4,6 +4,7 @@ from jax import jit
 import numpy as np
 from .constants import c_light
 from .units import UNITS
+from .input import Omega_m, h
 from functools import partial
 
 
@@ -19,16 +20,8 @@ def integrator(f, a, b):
 
 
 @jit
-def s_time(z, Omega_m, h):
-    return (
-        c_light
-        * integrator(
-            lambda x: (1 + x) / jnp.sqrt(Omega_m * jnp.power(1 + x, 3) + 1.0 - Omega_m),
-            0.0,
-            z,
-        )
-        / (100.0 * h * UNITS.km / UNITS.s / UNITS.Mpc)
-    )
+def Hubble(z):
+    return (100.0 * h * UNITS.km / UNITS.s / UNITS.Mpc) * jnp.sqrt(Omega_m * jnp.power(1 + z, 3) + 1.0 - Omega_m)
 
 
 @jit

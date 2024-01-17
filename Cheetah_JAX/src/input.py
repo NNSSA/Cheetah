@@ -16,10 +16,8 @@ z_end = 4.0
 z_samples = 100
 z_array = jnp.linspace(z_start, z_end, z_samples)
 
-s_array = vmap(s_time, in_axes=(0, None, None))(z_array, Omega_m, h)
-
-time_span = (jnp.min(s_array), jnp.max(s_array))
-time_eval = jnp.linspace(jnp.min(s_array), jnp.max(s_array), 10000)
+time_span = (jnp.min(z_array), jnp.max(z_array))
+time_eval = z_array
 
 # Halo mass range
 Mh_min = 1e12 * UNITS.MSun
