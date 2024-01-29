@@ -1,12 +1,11 @@
 import jax.numpy as jnp
-from jax import vmap
 from .constants import Tnu_0, rho_crit_0_over_hsq
 from .units import UNITS
-from .utils import s_time
 
 
 # Cosmological parameters
 Omega_m = 0.3
+Omega_b = 0.05
 h = 0.67
 rho_crit_0 = rho_crit_0_over_hsq * h**2
 
@@ -53,6 +52,6 @@ phi_samples = 20
 phi_array = jnp.linspace(0.0, 2.0 * jnp.pi, phi_samples)
 
 # Differential equation solver parameters
-rtol = 1e-8
-atol = 1e-8
+rtol = 1e-4
+atol = 1e-4
 max_steps = 2**16

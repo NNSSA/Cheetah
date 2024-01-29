@@ -2,7 +2,7 @@ import jax
 import jax.numpy as jnp
 from jax import jit
 from .constants import Grav_const
-from .input import rho_crit_0
+from .input import rho_crit_0, Omega_m, Omega_b
 from .units import UNITS
 
 
@@ -47,3 +47,19 @@ def dPhidxi_NFW(pos, redshift, Mh):
         * Rs
         * (jnp.log(1.0 + xs) / (xs**2) - 1.0 / (xs * (1.0 + xs)))
     ) * jnp.array([x / r, y / r, z / r])
+
+
+@jit
+def dPhidxi_hernquist(pos, Mh):
+    x, y, z = pos
+    Mb = (Omega_b / Omega_m) * Mh
+    r = jnp.sqrt(jnp.power(x, 2.0) + jnp.power(y, 2.0) + jnp.power(z, 2.0))
+    Delta_vir = 200.0
+    Rvir = (3.0 * Mh / (4 * jnp.pi * Delta_vir * rho_crit_0)) ** (1.0 / 3)
+    a = Rvir * 2e-2
+    return (Grav_const * Mb / jnp.power(r + a, 2.0)) * jnp.array([x / r, y / r, z / r])
+
+
+@jit
+def dPhidxi_tot(pos, redshift, Mh):
+    return dPhidxi_NFW(pos, redshift, Mh) + dPhidxi_hernquist(pos, Mh)

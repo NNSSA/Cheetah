@@ -1,6 +1,6 @@
 import jax.numpy as jnp
 from jax import jit
-from .profiles import dPhidxi_NFW
+from .profiles import dPhidxi_tot
 from .utils import Hubble
 from .input import rtol, atol, max_steps
 from diffrax import diffeqsolve, ODETerm, Dopri5, SaveAt, PIDController
@@ -9,7 +9,7 @@ from diffrax import diffeqsolve, ODETerm, Dopri5, SaveAt, PIDController
 @jit
 def equations_of_motion(z, state, args):
     dx = -state[3:] * (1 + z) / Hubble(z)
-    du = dPhidxi_NFW(state[:3], z, args[0]) / (1 + z) / Hubble(z)
+    du = dPhidxi_tot(state[:3], z, args[0]) / (1 + z) / Hubble(z)
     return jnp.concatenate((dx, du))
 
 
