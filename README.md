@@ -14,5 +14,5 @@ For each radial position at z_0, Cheetah initializes runs for a range of velocit
 
 The calculated phase space distribution today is then integrated across all velocities and angles for each radial position to estimate the mass density. Through Cheetah’s highly parallized architecture, this process is repeated for many radial positions (as well as neutrino and DM mass values) simultaneously to produce the output results in final_density_ratios.npy. 
 
-Most parameters are can be edited through the subscript input.py. To run with default parameters, type “python main.py” while in the Cheetah_JAX directory. 
+To run with default parameters, type “python main.py” while in the Cheetah_JAX directory. Most parameters are can be edited through the subscript input.py. Main_across_z.py produces the neutrino density profile across redshifts, and orbits.py provides the neutrino positions and velocities across redshifts.
 
