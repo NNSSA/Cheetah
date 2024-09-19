@@ -19,12 +19,16 @@ Nashwan Sabti, Keduse Worku, Marc Kamionkowski
 If you found this code useful, please cite: [our arxiv link]
 
 
+## Animations
+Below are some animations showcasing the functionality of **Cheetah**:
+**Individual Trajectories:**
 ![Animation](single_trajectories_animation.gif)
-Individual trajectories for Rs/R200/Ri
+Individual neutrino trajectories for R<sub>s</sub>/R<sub>200</sub>/R<sub>i</sub>.
 
 
+**All Trajectories:**
 ![Animation](all_trajectories_animation.gif)
-All trajectories for Rs/R200/Ri
+All neutrino trajectories for R<sub>s</sub>/R<sub>200</sub>/R<sub>i</sub>
 
 
 ## Code Features
@@ -88,8 +92,4 @@ in which M12 is halo mass in units of 10^{12} Msun, zo is the observed redshift,
 ```bash
 \nh 1e3 0.0 4.5 0.3
 ```
-
-
-
-
 
