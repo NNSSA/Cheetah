@@ -19,6 +19,14 @@ Nashwan Sabti, Keduse Worku, Marc Kamionkowski
 If you found this code useful, please cite: [our arxiv link]
 
 
+![Animation](single_trajectories_animation.gif)
+Individual trajectories for Rs/R200/Ri
+
+
+![Animation](all_trajectories_animation.gif)
+All trajectories for Rs/R200/Ri
+
+
 ## Code Features
 **Cheetah** is a code that quickly computes the clustering of neutrinos onto spherically symmetric dark-matter halos. The code calculates neutrino trajectories through backtracking from today (when z<sub>o</sub> is set to 0) to z<sub>i</sub> (corresponding to ~4.85). **Cheetah** is available in **JAX** and in **C** with a Python wrapper for user convenience. In both versions, users interact primarily through a main script which is supported by several subscripts.
 
