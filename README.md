@@ -21,14 +21,14 @@ If you found this code useful, please cite: [our arxiv link]
 
 ## Animations
 Below are some animations showcasing the functionality of **Cheetah**:
-**Individual Trajectories:**
+
+
 ![Animation](single_trajectories_animation.gif)
-Individual neutrino trajectories for R<sub>s</sub>/R<sub>200</sub>/R<sub>i</sub>.
+Individual neutrino trajectories for positions R<sub>s</sub>/R<sub>200</sub>/R<sub>i</sub>.
 
 
-**All Trajectories:**
 ![Animation](all_trajectories_animation.gif)
-All neutrino trajectories for R<sub>s</sub>/R<sub>200</sub>/R<sub>i</sub>
+All neutrino trajectories for positions R<sub>s</sub>/R<sub>200</sub>/R<sub>i</sub>
 
 
 ## Code Features
