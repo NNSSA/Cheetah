@@ -4,12 +4,12 @@ from .profiles import dPhidxi_tot
 from .utils import Hubble
 from .input import rtol, atol, max_steps
 from diffrax import diffeqsolve, ODETerm, Dopri5, SaveAt, PIDController
-
+from jax import debug
 
 @jit
 def equations_of_motion(z, state, args):
-    dx = -state[3:] * (1 + z) / Hubble(z)
-    du = dPhidxi_tot(state[:3], z, args[0]) / (1 + z) / Hubble(z)
+    dx = -state[2:] * (1 + z) / Hubble(z)
+    du = dPhidxi_tot(state[:2], z, args[0]) / (1 + z) / Hubble(z)
     return jnp.concatenate((dx, du))
 
 
@@ -32,3 +32,5 @@ def solve_equations(time_span, ini_conds, args, time_eval):
         stepsize_controller=stepsize_controller,
         max_steps=max_steps,
     )
+
+
