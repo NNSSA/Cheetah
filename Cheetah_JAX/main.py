@@ -26,8 +26,10 @@ def my_function(u_ini, theta, r_ini, Mh):
     args = (Mh,)
 
     result = solve_equations(time_span, ini_conds, args, time_eval)
+    #returns velocities at z_i
     u_sol = result.ys[-1, 2:] 
-
+    
+    #Using Liouville's theorem to equate phase space distributions
     return vmap(f_today, in_axes=(None, 0, None))(
         f_FD, #alter initial neutrino distribution here
         mass_array,
@@ -59,7 +61,7 @@ if __name__ == "__main__":
             density_contrast = density_contrast.at[num_Mh, num_r, :].set(
                 vmap(utils.density_trapz, in_axes=(0, 0, None))(
                     f_array[:, :, :, num_r, num_Mh],
-                    p_array * mass_array[:, None] / mass_fid,
+                    p_array * mass_array[:, None] / mass_fid, #rescaling the momenta for each neutrino mass
                     theta_array,
                 )
                 / n_FD_SM
