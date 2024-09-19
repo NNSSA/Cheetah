@@ -84,9 +84,9 @@ clang nh.c -lm -o nh -O3
 ```
 This produces the executable file nh. Then run:
 ```bash
-\nh  M12 zo c mnu
+\nh M12 zo c mnu
 ```
-in which M12 is halo mass in units of 10^{12} Msun, zo is the observed redshift, c is the concentration parameter, and mnu is neutrino mass in eV. One possible set of choices is:
+in which M12 is halo mass in units of \(10^{12} \, M_{\odot}\), zo is the observed redshift, c is the concentration parameter, and mnu is neutrino mass in eV. One possible set of choices is:
 
 
 ```bash
