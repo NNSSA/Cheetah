@@ -3,10 +3,20 @@
 </p>
 
 
-# Cheetah: An auto-differentiable gravity simulation in JAX for solving relic neutrino trajectories.
+# Cheetah: An Auto-Differentiable Gravity Simulation in JAX for Solving Relic Neutrino Trajectories
 
 
-Authors: Nashwan Sabti, Keduse Worku, Marc Kamionkowski
+**Authors**:  
+Nashwan Sabti, Keduse Worku, Marc Kamionkowski
+
+
+**Contact Information**:  
+- Nash Sabti – [nash.sabti@gmail.com](mailto:nash.sabti@gmail.com)  
+- Keduse Worku – [kworku2@jhu.edu](mailto:kworku2@jhu.edu)  
+- Marc Kamionkowski – [kamion@jhu.edu](mailto:kamion@jhu.edu)
+
+
+If you found this code useful, please cite: [our arxiv link]
 
 
 ## Code Features
@@ -70,13 +80,6 @@ in which M12 is halo mass in units of 10^{12} Msun, zo is the observed redshift,
 ```bash
 \nh 1e3 0.0 4.5 0.3
 ```
-If you found this code useful, please cite: [our arxiv link]
-
-
-Contact information:
-Keduse Worku – kworku2@jhu.edu
-Nash Sabti – nash.sabti@gmail.com
-Marc Kamionkowski – kamion@jhu.edu 
 
 
 
