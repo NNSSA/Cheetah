@@ -86,7 +86,7 @@ This produces the executable file nh. Then run:
 ```bash
 \nh M12 zo c mnu
 ```
-in which M12 is halo mass in units of \(10^{12}\) M<sub>☉</sub>, zo is the observed redshift, c is the concentration parameter, and mnu is neutrino mass in eV. One possible set of choices is:
+in which M12 is halo mass in units of \(10<sup>12</sup>\) M<sub>☉</sub>, zo is the observed redshift, c is the concentration parameter, and mnu is neutrino mass in eV. One possible set of choices is:
 
 
 ```bash
