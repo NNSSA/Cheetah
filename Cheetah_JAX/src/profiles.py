@@ -27,9 +27,9 @@ def mod_func(redshift, power=(1)):
 
 
 @jit
-def mu_func(z, alpha, beta):
+def kappa_func(z, alpha, beta):
     ## for small gravity modifications ## 
-    return alpha * (z / (1 + z)) ** beta
+    return 1 + (alpha * (z / (1 + z)) ** beta)
 
 
 @jit
@@ -72,7 +72,7 @@ def dPhidxi_NFW(pos, redshift, Mh):
         * (r ** -2)
         * mod_func(redshift)
         * Mh
-        #* (1 + mu_func(redshift, alpha, beta))
+        #* kappa_func(redshift, alpha, beta)
         * result) * jnp.array([y / r, z / r], dtype=jnp.float64)
 
 
