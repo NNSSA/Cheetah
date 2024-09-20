@@ -21,8 +21,8 @@ def mod_func(redshift, power=(1)):
     ## modulation function for the DM halo growth rate. Power is optional arg, 1 for linear growth by default ##
     z_i = z_end
     #200 times critical density at previous redshift
-    z_0 = ((1 + z_i) / 200**(1/3)) - 1
-    mod = jnp.select([redshift <= z_0, redshift < z_i], [1, ((z_i - redshift) / (z_i - z_0))**power], default=0)
+    z_o = ((1 + z_i) / 200**(1/3)) - 1
+    mod = jnp.select([redshift <= z_o, redshift < z_i], [1, ((z_i - redshift) / (z_i - z_o))**power], default=0)
     return mod
 
 

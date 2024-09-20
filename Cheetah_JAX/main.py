@@ -70,7 +70,7 @@ if __name__ == "__main__":
     print(f'R_i: {Ri / UNITS.Mpc} Mpc')
     end = time.time()
     print("Saving overdensities...")
-    #jnp.save('final_density_ratios.npy', density_contrast)
+    jnp.save('final_density_ratios.npy', density_contrast)
     #Plotting the central density values
     plt.loglog(mass_array / UNITS.eV, density_contrast[0, 0, :] - 1)
     plt.xlabel("mass in eV")
