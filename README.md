@@ -3,7 +3,7 @@
 </p>
 
 
-# Cheetah: An Auto-Differentiable Gravity Simulation in JAX for Solving Relic Neutrino Trajectories
+# Cheetah: A Gravity Simulation in JAX for Solving Relic Neutrino Trajectories
 
 
 **Authors**:  
