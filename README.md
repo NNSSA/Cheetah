@@ -25,7 +25,7 @@ Neutrinos are tracked backwards in time, coming from different parts of the univ
 - 10 angles between 0 and $\pi$
 - A wide range of momenta
 
-Forward animations for individual neutrino trajectories for positions R<sub>s</sub>/R<sub>200</sub>/R<sub>i</sub>:
+Forward animations for individual neutrino trajectories for positions R<sub>s</sub>/R<sub>200</sub>/R<sub>i</sub>, with the central dark-matter halo formation shown in blue:
 ![Animation](single_trajectories_animation.gif)
 
 
@@ -34,13 +34,24 @@ Forward animations for all neutrino trajectories for positions R<sub>s</sub>/R<s
 
 
 ## Code Features
-**Cheetah** is a code that quickly computes the clustering of neutrinos onto spherically symmetric dark-matter halos. The code calculates neutrino trajectories through backtracking from today (when z<sub>o</sub> is set to 0) to z<sub>i</sub> (corresponding to ~4.85). **Cheetah** is available in **JAX** and in **C** with a Python wrapper for user convenience. In both versions, users interact primarily through a main script which is supported by several subscripts.
+**Cheetah** is a code that quickly computes the clustering of neutrinos onto spherically symmetric dark-matter halos.
 
+- The code calculates neutrino trajectories through backtracking from today (when \( z_o \) is set to 0) to \( z_i \) (corresponding to ~4.85).
+- **Cheetah** is available in **JAX** and in **C** with a Python wrapper for user convenience.
+  - In both versions, users interact primarily through a main script which is supported by several subscripts.
 
-The **JAX** version of Cheetah is highly parallelized and flexible, capable of generating neutrino profiles for a wide range of neutrino and dark-matter halo masses simultaneously. A fully self-contained `UNITS` module ensures that users only need to specify units at the beginning and end of the simulations — all intermediate unit conversions are handled automatically. Most parameters can be adjusted in the `input.py` subscript. It is important to note that choosing a wide range of neutrino masses requires a similarly broad range of neutrino momenta for proper phase space sampling. The total gravitational potential and DM profile can be modified in the `profiles.py` subscript, while the initial phase space of the neutrinos is governed by the `distributions.py` subscript. The main script also includes commented-out numerical checks.
+The **JAX** version of Cheetah is highly parallelized and flexible, capable of generating neutrino profiles for a wide range of neutrino and dark-matter halo masses simultaneously.
 
+- A fully self-contained `UNITS` module ensures that users only need to specify units at the beginning and end of the simulations — all intermediate unit conversions are handled automatically.
+- Most parameters can be adjusted in the `input.py` subscript. It is important to note that choosing a wide range of neutrino masses requires a similarly broad range of neutrino momenta for proper phase space sampling.
+- The total gravitational potential and DM profile can be modified in the `profiles.py` subscript, while the initial phase space of the neutrinos is governed by the `distributions.py` subscript.
+- The main script also includes commented-out numerical checks.
 
-In contrast, the **C** version is less flexible in terms of parameter choices but is highly optimized for speed for a single set of neutrino and DM halo masses. It returns neutrino density values for 100 radial points in just a few seconds, making it ideal for users seeking a ready-to-use code without modifications to the underlying physics. As with the JAX version, the main script includes commented-out numerical checks.
+In contrast, the **C** version is less flexible in terms of parameter choices but is highly optimized for speed for a single set of neutrino and DM halo masses.
+
+- It returns neutrino density values for 100 radial points in just a few seconds, making it ideal for users seeking a ready-to-use code without modifications to the underlying physics.
+- As with the JAX version, the main script includes commented-out numerical checks.
+
 
 
 ## How to Use the JAX Code
