@@ -5,7 +5,7 @@ from .units import UNITS
 
 # Cosmological parameters
 Omega_m = 0.315
-h = 0.67
+h = 0.68
 rho_crit_0 = rho_crit_0_over_hsq * h**2
 
 # Redshift range
