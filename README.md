@@ -34,23 +34,22 @@ Forward animations for all neutrino trajectories for positions R<sub>s</sub>/R<s
 
 
 ## Code Features
-**Cheetah** is a code that quickly computes the clustering of neutrinos onto spherically symmetric dark-matter halos.
+**Cheetah** is a code that computes neutrino clustering onto spherically symmetric dark-matter halos by backtracking trajectories from today ($z_o$) to $z_i$ (around 4.85).
 
-- The code calculates neutrino trajectories through backtracking from today (when $z_o$ is set to 0) to $z_i$ (corresponding to ~4.85).
-- **Cheetah** is available in **JAX** and in **C** with a Python wrapper.
-  - In both versions, users interact primarily through a main script which is supported by several subscripts.
+Available in **JAX** and **C** with a **Python** wrapper, users primarily interact through a main script supported by subscripts.
 
-The **JAX** version of Cheetah is highly parallelized and flexible, capable of generating neutrino profiles for a wide range of neutrino and dark-matter halo masses simultaneously.
+**JAX** Version:
 
-- Most parameters can be adjusted in the `input.py` subscript. 
-- The total gravitational potential and DM profile can be modified in the `profiles.py` subscript, while the initial phase space of the neutrinos is governed by the `distributions.py` subscript.
-- The main script also includes commented-out numerical checks.
+- Highly parallelized and flexible for generating neutrino profiles across various masses.
+- Adjustable parameters in `input.py`
+- Modify gravitational potential and DM profile in `profiles.py`
+- Neutrino phase space governed by `distributions.py`
 
-In contrast, the **C** version is less flexible in terms of parameter choices but is highly optimized for speed for a single set of neutrino and DM halo masses.
+**C** Version:
 
-- Ideal for users seeking a ready-to-use code without modifications to the underlying physics
-- Returns neutrino density values for 100 radial points in just a few seconds
-- As with the JAX version, the main script includes commented-out numerical checks.
+- Optimized for speed with a single set of parameters
+- Returns neutrino density values for 100 radial points in seconds
+- Includes commented-out numerical checks in the main script
 
 
 
