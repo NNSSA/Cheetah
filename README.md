@@ -19,9 +19,11 @@ Nashwan Sabti, Keduse Worku, Marc Kamionkowski
 If you found this code useful, please cite: [our arxiv link]
 
 
-## Animations
-Below are some animations showcasing the functionality of **Cheetah**
 
+## Neutrino Trajectories
+Neutrinos are tracked backwards in time for a given fixed position today at \( z_o = 0 \), coming from different parts of the universe. Each animation highlights the different neutrino trajectories initialized with:
+- **10 angles** at \([0, \pi]\)
+- A wide range of **momenta**
 
 Individual neutrino trajectories for positions R<sub>s</sub>/R<sub>200</sub>/R<sub>i</sub>:
 ![Animation](single_trajectories_animation.gif)
