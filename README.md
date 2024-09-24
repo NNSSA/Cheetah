@@ -21,13 +21,15 @@ If you found this code useful, please cite: [our arxiv link]
 
 
 ## Neutrino Trajectories
-Neutrinos are tracked backwards in time for a given fixed position today at $\z_o$ = 0, coming from different parts of the universe. Each animation, which instead moves forward in time, highlights the formation of the dark-matter halo in blue alongside neutrino trajectories that have been initialized with ten angles between 0 and $\pi$ and a wide range of momenta.
+Neutrinos are tracked backwards in time, coming from different parts of the universe. For a fixed radial position today at $z_o$ = 0, the neutrino trajectories are initialized with:
+- 10 angles between 0 and $\pi$
+- A wide range of momenta
 
-Individual neutrino trajectories for positions R<sub>s</sub>/R<sub>200</sub>/R<sub>i</sub>:
+Forward animations for individual neutrino trajectories for positions R<sub>s</sub>/R<sub>200</sub>/R<sub>i</sub>:
 ![Animation](single_trajectories_animation.gif)
 
 
-All neutrino trajectories for positions R<sub>s</sub>/R<sub>200</sub>/R<sub>i</sub>:
+Forward animations for all neutrino trajectories for positions R<sub>s</sub>/R<sub>200</sub>/R<sub>i</sub>:
 ![Animation](all_trajectories_animation.gif)
 
 
