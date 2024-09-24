@@ -22,7 +22,7 @@ If you found this code useful, please cite: [our arxiv link]
 
 ## Neutrino Trajectories
 Neutrinos are tracked backwards in time for a given fixed position today at \z_o = 0\, coming from different parts of the universe. Each animation highlights the formation of the dark-matter halo in blue alongside neutrino trajectories initialized with:
-- **10 angles** at \([0, \, \text{\textpi}]\)
+- **10 angles** between 0 and \(\pi\)
 - A wide range of **momenta**
 
 Individual neutrino trajectories for positions R<sub>s</sub>/R<sub>200</sub>/R<sub>i</sub>:
