@@ -21,7 +21,7 @@ If you found this code useful, please cite: [our arxiv link]
 
 
 ## Neutrino Trajectories
-Neutrinos are tracked backwards in time, coming from different parts of the universe. For a fixed radial position today at $z_o$ = 0, the neutrino trajectories are initialized with:
+Neutrinos are tracked backwards in time, coming from different parts of the universe. For a fixed radial position today at $z_0$ = 0, the neutrino trajectories are initialized with:
 - 10 angles between 0 and $\pi$
 - A wide range of momenta
 
@@ -34,7 +34,7 @@ Forward animations for all neutrino trajectories for positions R<sub>s</sub>/R<s
 
 
 ## Code Features
-**Cheetah** is a code that computes neutrino clustering onto spherically symmetric dark-matter halos by backtracking trajectories from today ($z_o$) to $z_i$ (around 4.85).
+**Cheetah** is a code that computes neutrino clustering onto spherically symmetric dark-matter halos by backtracking trajectories from today ($z_0$) to $z_i$ (around 4.85).
 
 Available in **JAX** and **C** with a **Python** wrapper, users primarily interact through a main script supported by subscripts.
 
@@ -71,12 +71,12 @@ python main.py
 ```
 
 
-For each radial position at z<sub>o</sub>, Cheetah initializes runs for a range of velocities and angles to accurately sample the neutrino phase space distribution at z<sub>i</sub>. After the neutrino distribution at z<sub>i</sub> is calculated through:
+For each radial position at z<sub>0</sub>, Cheetah initializes runs for a range of velocities and angles to accurately sample the neutrino phase space distribution at z<sub>i</sub>. After the neutrino distribution at z<sub>i</sub> is calculated through:
 ```bash
 result = solve_equations(time_span, ini_conds, args, time_eval)
 u_sol = result.ys[-1, 2:] 
 ```
-the results are fed into Liouville’s theorem to obtain the momenta distribution for all neutrino masses at z<sub>o</sub> through f_today =  f_FD at the end of my_function:
+the results are fed into Liouville’s theorem to obtain the momenta distribution for all neutrino masses at z<sub>0</sub> through f_today =  f_FD at the end of my_function:
 ```bash
 vmap(f_today, in_axes=(None, 0, None)) (f_FD, mass_array, jnp.sqrt(jnp.sum(jnp.power(u_sol, 2))),)
 ```
@@ -98,7 +98,7 @@ This produces the executable file nh. Then run:
 ```bash
 \nh M12 zo c mnu
 ```
-in which M12 is halo mass in units of 10<sup>12</sup> M<sub>☉</sub>, zo is the observed redshift, c is the concentration parameter, and mnu is neutrino mass in eV. One possible set of choices is:
+in which M12 is halo mass in units of 10<sup>12</sup> M<sub>☉</sub>, z0 is the observed redshift, c is the concentration parameter, and mnu is neutrino mass in eV. One possible set of choices is:
 
 
 ```bash
