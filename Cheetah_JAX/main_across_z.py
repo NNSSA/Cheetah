@@ -20,10 +20,10 @@ import glob
 
 @jit
 def my_function(u_ini, theta, r_ini, Mh, time_span, time_eval):
-    uy_ini = -u_ini * jnp.cos(theta)
-    uz_ini = -u_ini * jnp.sin(theta)
+    ux_ini = -u_ini * jnp.cos(theta)
+    uy_ini = -u_ini * jnp.sin(theta)
 
-    ini_conds = jnp.array([r_ini, 0.0, uy_ini, uz_ini])
+    ini_conds = jnp.array([r_ini, 0.0, ux_ini, uy_ini])
 
     args = (Mh,)
 
