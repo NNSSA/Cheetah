@@ -5,7 +5,7 @@ from .units import UNITS
 
 # Cosmological parameters
 Omega_m = 0.315
-h = 0.67
+h = 0.68
 rho_crit_0 = rho_crit_0_over_hsq * h**2
 
 # Redshift range
@@ -30,7 +30,7 @@ r200 = Ri / (1 + z_end)
 r_min = 1e-2 * UNITS.Mpc 
 r_max = 5e1 * UNITS.Mpc
 r_samples = 20 
-r_array = jnp.geomspace(r_min, r_max, r_samples) #jnp.geomspace(r200/10, Ri*2, r_samples)
+r_array = jnp.geomspace(r_min, r_max, r_samples) 
 
 # Particle mass range
 mass_fid = 0.3 * UNITS.eV 
@@ -51,6 +51,6 @@ theta_samples = 10
 theta_array = jnp.linspace(0.0, jnp.pi, theta_samples)
 
 # Differential equation solver parameters
-rtol = 1e-6    #1e-4
-atol = 1e-6    #1e-4
+rtol = 1e-6  
+atol = 1e-6  
 max_steps = 2**16  
