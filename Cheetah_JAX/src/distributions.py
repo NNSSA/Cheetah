@@ -23,26 +23,13 @@ def f_FD(p):
 @jit
 def f_dropoff(p):
     # Values chosen to preserve Neff
-    p_0 = 1.1
+    p_0 = 2.38
     plateau_value = 0.5
-    alpha = 3.5
+    alpha = 1.12
     Tnu = 1.3625 * UNITS.K
     p = p / Tnu
 
     return jnp.where(p <= p_0, plateau_value, plateau_value * jnp.exp(-alpha * (p - p_0)))
-
-
-@jit
-def f_declining_power(p):
-    Tnu = 1.95 * UNITS.K
-    p_arr = p / Tnu
-    # Values chosen to preserve Neff
-    power = 0.7898
-    some_p_limit = 0.05
- 
-    return jnp.where(p_arr < some_p_limit,
-                     0.5,
-                     0.5 * (some_p_limit / p_arr)**power)
 
 
 
@@ -76,10 +63,22 @@ def Gaussian_distribution_simple(p):
     return (Amp * Gaussian)
 
 
-
 def Gauss_bump(p):
     Tnu = 1.3625 * UNITS.K
     f_FD = jnp.power(1 + jnp.exp(p / Tnu), -1.0)
     return (Gaussian_distribution_simple(p) + f_FD)
 
+
+### non-cold relics ###
+# Fermionic DM
+@jit
+def f_fermionic(p):
+    Tnu = 1.95 * UNITS.K
+    return jnp.power(p / Tnu, -2.0) / (1 + jnp.exp(p / Tnu))
+
+# Bosonic DM
+@jit
+def f_bosonic(p):
+    Tnu = 1.95 * UNITS.K
+    return jnp.power(1 - jnp.exp(p / Tnu), -1.0)
 
