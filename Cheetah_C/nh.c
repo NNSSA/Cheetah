@@ -151,19 +151,16 @@ int main(int argc,char *argv[])
 
 
 
-  // Add new code to setup radii
-  int Nradii = 100;  // Example Nradii value, ensure it's properly set
-  double *radii = vector(1, Nradii);  // Allocate memory for radii
-
   // Set up the radii
+  int Nradii = 100;  
+  double *radii = vector(1, Nradii);  // Allocate memory for radii
   setup_radii(rs, r200, Ri, radii, Nradii);
 
   // Array to hold the radii values
   //double radii[RN_POINTS];
 
-  // Set up the radii
+  // Alt way to set up the radii for 11 specific positions
   //setup_radii(rs, r200, Ri, radii);
-
   // radii[1]=rs/10.0;  radii[2]=rs/3.0;  radii[3]=2.0*rs/3.0; radii[4]=rs;  radii[5]=rs+(r200-rs)/3.0;
   // radii[6]=rs+2.0*(r200-rs)/3.0;  radii[7]=r200;  radii[8]= 2.0*r200; radii[9]=3.0*r200; radii[10]=Ri;  radii[11]=3.0*Ri;
   
