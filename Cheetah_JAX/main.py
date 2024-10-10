@@ -7,7 +7,7 @@ from src.constants import n_FD_SM, Tnu_0
 import matplotlib.pyplot as plt
 from src.ode import *
 from src.input import *
-from src.distributions import f_today, f_FD, Gauss_bump, f_dropoff, f_declining_power
+from src.distributions import f_today, f_FD, Gauss_bump, f_dropoff, f_fermionic, f_bosonic
 import src.utils as utils
 from src.units import UNITS
 import time
