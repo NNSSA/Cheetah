@@ -18,7 +18,7 @@ def f_FD(p):
 
 
 ## Below are various alternate initial distributions for neutrinos ## 
-## Note that the background density change but also be accounted for ##
+## Note that the background density change must also be accounted for ##
 
 @jit
 def f_dropoff(p):
