@@ -45,6 +45,6 @@ theta_samples = 10
 theta_array = jnp.linspace(0.0, jnp.pi, theta_samples)
 
 # Differential equation solver parameters
-rtol = 1e-6    #1e-4
-atol = 1e-6    #1e-4
+rtol = 1e-6 
+atol = 1e-6 
 max_steps = 2**16  
