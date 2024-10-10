@@ -21,8 +21,8 @@ def mod_func(redshift, power=(1)):
     ## modulation function for the DM halo growth rate. Power is optional arg, 1 for linear growth by default ##
     z_i = z_end
     #200 times critical density at previous redshift
-    z_o = ((1 + z_i) / 200**(1/3)) - 1
-    mod = jnp.select([redshift <= z_o, redshift < z_i], [1, ((z_i - redshift) / (z_i - z_o))**power], default=0)
+    z_0 = ((1 + z_i) / 200**(1/3)) - 1
+    mod = jnp.select([redshift <= z_0, redshift < z_i], [1, ((z_i - redshift) / (z_i - z_0))**power], default=0)
     return mod
 
 
@@ -35,8 +35,8 @@ def kappa_func(z, alpha, beta):
 @jit
 def dPhidxi_NFW(pos, redshift, Mh):
     ## Time-evolving NFW profile with modulation function ##
-    y, z = pos
-    r = jnp.sqrt(jnp.power(y, 2.0) + jnp.power(z, 2.0))
+    x, y = pos
+    r = jnp.sqrt(jnp.power(x, 2.0) + jnp.power(y, 2.0))
     conc = jax.lax.select(
         redshift >= 4,
         10
@@ -73,14 +73,14 @@ def dPhidxi_NFW(pos, redshift, Mh):
         * mod_func(redshift)
         * Mh
         #* kappa_func(redshift, alpha, beta)
-        * result) * jnp.array([y / r, z / r], dtype=jnp.float64)
+        * result) * jnp.array([x / r, y / r], dtype=jnp.float64)
 
 
 @jit
 def dPhidxi_NFW_const(pos, redshift, Mh):
     ## constant concentration parameter ##
-    y, z = pos
-    r = jnp.sqrt(jnp.power(y, 2.0) + jnp.power(z, 2.0))
+    x, y = pos
+    r = jnp.sqrt(jnp.power(x, 2.0) + jnp.power(y, 2.0))
     conc = 4.433
     Ri = 1.77 * (Mh / 1e12 / UNITS.MSun)**(1/3) * UNITS.Mpc
     R200 = Ri / (1 + z_end)
@@ -95,7 +95,6 @@ def dPhidxi_NFW_const(pos, redshift, Mh):
         * (r ** -2)
         * mod_func(redshift)
         * Mh
-        * result) * jnp.array([y / r, z / r], dtype=jnp.float64)
-
+        * result) * jnp.array([x / r, y / r], dtype=jnp.float64)
 
 
