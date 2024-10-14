@@ -16,7 +16,7 @@ Nashwan Sabti, Keduse Worku, Marc Kamionkowski
 - Marc Kamionkowski – [kamion@jhu.edu](mailto:kamion@jhu.edu)
 
 
-If you found this code useful, please cite: [our arxiv link]
+If you found this code useful, please cite us [here](https://arxiv.org/abs/2410.08267)
 
 
 
